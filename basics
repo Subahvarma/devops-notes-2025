@@ -19,3 +19,13 @@
 --> shell scripting is used to automate tasks without any manual intervention also at particular time using cronjob
 
 --> devops eng use shell scripting day to day to automate infrastructure, configuration management and also to check node health, monitor aws resources adding users to git etc.
+--> Version controlled system are used to share code among team and versioning the code previously orgs used cvs and svn they are centralised vcs the major disadavntage is the code is shared to a centralised system if there is a single point of failure then there is no way to communicate. Nowadays everyone using GIT as it is a distribted system where team can make there own fork(own copy) and they can locally develop there code which is isolated from main copy. 
+
+--> Github is a wrapper developed on top of git to have better usability, issues, reviewing, commenting and project management which makes job so easy.
+
+--> Commands : git init, git status, git log, git clone, git merge/rebase/cherry-pick, git remote add origin link, git push -u origin main, git push, git branch -b feature, git git ass, git commit -m "", git diff, git reset --hard commitid, git checkout
+
+--> Difference between rebase and merge : if you want commit history in linear fasion use rebase , if not use merge bcoz using merge the logs are appeared on top of the main 
+
+--> clone and fork: if you want to download the repo in your local macine use clone, if you want to make your own copy of your project and work isloated from the main copy you can fork and make changes there. 
+

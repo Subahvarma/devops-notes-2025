@@ -1,0 +1,21 @@
+--> Devops is a culture that combines software development and it operations,it improves organisational ability to deliver applications by ensuring there is proper automation, monitoring,quality in place and also ensuring fastest delivery of application.
+
+--> sdlc (software development life cycle) is a structured approach to design, build,test and maintain software.having 6 stages from initial planning to ongoing maintainence and deployment
+
+--> stages - planning, defining, designing, building, testing, deploying
+
+--> last three phases are devops sentric, devops engineer primarily focus on build, test and deploy phases
+
+--> virtualization- 20 years back there is no concept of virtualisation so many resuorces are under utilised hence there is a huge loss fpr the organisations after this concept we are effectively utilesing resources. as a devops eng our major goal is to deliver app in a cost effective way.
+
+--> one physical server is divided into 100s of vms using hypervisor
+
+--> now a days many orgs are not even buying physical servers they re simply deploying there app in cloud such as aws azure etc as they are cost effective secure, no need to maintain servers and also reliable, we can pay whenever server is running.
+
+--> linux is a open source operating system which is secure fast and light in wieght, also have different distributions like ubuntu centos etc
+
+--> shell is a command line interface  for linux with help of commands it communicates with kernel and then hardware and gives us required output viceversa 
+
+--> shell scripting is used to automate tasks without any manual intervention also at particular time using cronjob
+
+--> devops eng use shell scripting day to day to automate infrastructure, configuration management and also to check node health, monitor aws resources adding users to git etc.

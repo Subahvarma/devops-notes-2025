@@ -1,0 +1,22 @@
+#!/bin/bash
+
+########################
+#Author: Subha
+#Date:14/10/2025
+#
+#This script tracks the aws resources usage
+#
+#Version:V1
+########################
+
+set -x # run in debug mode
+
+aws s3 ls
+
+echo "list aws instances"
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+
+aws iam list-users
+
+aws lambda list-functions
+

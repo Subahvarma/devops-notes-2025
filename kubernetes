@@ -1,0 +1,54 @@
+kubernetes is easy
+- k8s is comtainer orchestration tool, which maintaines containers
+- we choose comtainers to deploy our apps as it is having so many adv, but they are ephermal in nature and maintaining 1000s of cont is so difficult so k8s came into existance 
+- it is opensource and has large ecosystem (cncf contributers)and it uses yaml files which is well known for devops eng 
+- docker uses single host system for 100s of containers any cont can get killed bcoz of many reasons and docker dont have default auto healing, auto scaling properties for cont and it is not enterprise support
+- k8s is cluster like architecture means it deploy apps in multiple nodes, have replica sets to auto scale cont when load increases, k8s have api server in control plane which rxs info if any cont going down it roll out anew cont so k8s also have the auto heal whicnh controls the damage of the cont, it supports firewall
+- docker is just a cont platform it dosnt have all of these capability also cant black list or whitelist few ips do ddos attacks so it is never used in prod. k8s supports enterptise level.
+
+
+
+
+---k8s architecture---
+
+k8s have multiple master nodes and worker nodes all containers run in worker nodes. Here is clear explanation of k8s Architecture
+:
+
+Control plane 
+Master node
+
+Api server- which is heart of k8s every req is rxd by the api server it manages the worker nodes which is gng to die and all and gives info to scheduler. Apiserver is the one which interacts with external world
+Scheduler-schedules the task
+Etcd –data store i.e key value store which back ups data 
+Control manger-k8s have many controllers like replica set to manage containers so there should be one mechanism to manage all these controllers k8s have cm to manage internal controllers
+ccm-in case new cloud want to use k8s and writes it own code in ccm to mange  ext cloud controllers 
+Data plane 
+Worker node
+
+Kubelet –responsible for creating the pods and ensures that the pods are  always up and running
+Kubeproxy- responsible for creating ips for the pods using ip tables from the linux and resp for networking
+Cont run time- responsible for runing the cont 
+- For running docker we give single cmd docker run –itd image –name cont –p 3000:3000 but instead of giving like this k8s have pod.yml file in which we give all spec in file which makes declrative approach fo enterprise level.
+- Pod is nothing but cont it run our app it can have one or more cont to gain adv like sahring volumes and network can com with both using localhost and running side-car and init cont which support our actual cont 
+
+
+Cont Pod
+Cluster ip(kubeproxy gen ip )
+
+	
+
+
+- Kubectl is k8s cli which can directly onteract with clusters (kubectl get nodes)
+- Minikube is a tool to locally run k8s but in prod we don’t use it we use k8s or eks etc 
+- Kubectl create –f pod.yml, kubectl get pods, to debug the pod(apps in k8s)k--ubectl describe pod nginx, kubectl logs nginx
+- Pod cannot do auto healing and scaling so we don’t deploy apps in pods
+- To  get adv capabilities for pods we will move from pod to deployment
+- In prod we don’t deploy apps directly in pods we deploy in deployment.yml 
+- Dep.yml manifest will create replicaset and this will rollout pods rs is a inbuilt controller which wensures that no.of pods that are specified in d.yml file is created in actual cluster or not .rs is the one which implements the auto healing capability in k8s
+- Thereare custom controllers in k8s like argocd etc
+- Deplo.yml manifest do nothing it is a high level abstraction which contains specs then rs will run pods and make sure every pod is running even when we delete a pod
+-   Kubectl get all(to list out all the resources avaolable In the namespaces) kubectl apply –f d.yml
+- Kubectl get rs, pods –w
+- Kubernetes service 
+- - if there is no k8s service yu will fail terriblyeven implementing the auto healing capabilityeven when yu have deplomts and pods running, app will not be accessible to certain ppl. Bcoz as the cont goes down new cont is creating with new ip so there is a prob. This load bal prob is solved is solved by service
+- - k8s service will give one url  

@@ -1,0 +1,15 @@
+shell commands i have learned so far:
+
+ls -ltr, cat, pwd, mkdir, rm -rf, cd, touch, vim/vi, chmod, sudo, useradd, usermod, grep, ssh, curl, wget, pipe, awk, traceroute, ping, top, nproc, free -g, df -h, du, help, man, conditions, loops, head, tail, cp, mv, uname, whoami, whereis, ps -ef, kill -9, kill all, apt/yum, iptables, alias,date 
+
+
+wildcards:
+*, ?, [], >>/tee
+
+
+curl http://logfile | grep "error" |awk -F" " '{print $2}'
+grep "subha" test.txt -i -v -n #-i casesensitive , -v will not print the given word -n in which line
+ 
+set -x, -o pipifail, -e
+
+

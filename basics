@@ -29,3 +29,13 @@
 
 --> clone and fork: if you want to download the repo in your local macine use clone, if you want to make your own copy of your project and work isloated from the main copy you can fork and make changes there. 
 
+
+----------------------------------------Ansible-----------------------------
+
+--> Ansible is deveoped by puthon language by redhat, it is a configuration management tool used to automate configuration tasks in servers 
+--> before ansible organisations used chef puppet etc but ansible became so popular among them as it is agentless, uses push mechanism, supports both windows (throush winrm protocol) as well as linux(using ssh protocol), we can write our own modules in python and share among teams using ansible galaxy. we can write ansible playbooks using simple yaml language and can scale our servers easily by simply adding server ips to the inventory file.
+--> if there is no configuration management introduced it is very difficult and impossible for us to upgrade, install secure patches manually by logging into each and evey server
+--> Ansible also have dynamic inventory capability as it can automatically scale whenever there is new server created. 
+--> disadvantages of ansible are it not give good support with windows, debugging also can be better,also need to improve performance.
+--> ansible has roles for modularity the playbooks and reusability among orgs and also give readability to complex playbooks.
+--> example : ansible -i inventory.ini all -m "shell" -a "touch subha" ,,ansible-playbook -i inventory.ini playboo.yml ,, ansible-galaxy role init kubernetes

@@ -39,3 +39,6 @@
 --> disadvantages of ansible are it not give good support with windows, debugging also can be better,also need to improve performance.
 --> ansible has roles for modularity the playbooks and reusability among orgs and also give readability to complex playbooks.
 --> example : ansible -i inventory.ini all -m "shell" -a "touch subha" ,,ansible-playbook -i inventory.ini playboo.yml ,, ansible-galaxy role init kubernetes
+
+------------------------------------------jenkins-----------------------------
+
